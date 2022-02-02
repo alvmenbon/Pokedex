@@ -28,7 +28,7 @@
             </select>
             <br>
             <br>
-            <input type="submit" name="save-poke" value="Añadir pokemon">
+            <input type="submit" class="btn btn-success btn-block" name="save-poke" value="Añadir pokemon">
         </form>
         </div>        
     </div>

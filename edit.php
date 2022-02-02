@@ -48,6 +48,7 @@ if (isset($_POST['update'])){
             
                 
             </select>
+            <br>
                    <button class="btn btn-succes" name="update">Editar</button>
                </form>
            </div>
