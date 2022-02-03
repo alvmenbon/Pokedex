@@ -23,9 +23,12 @@
                 <?php foreach($pokemons->pokemon as $Pokemon): ?>
                     <option value="<?php echo $Pokemon->name; ?>"><?php echo $Pokemon->name; ?></option>
                 <?php endforeach; ?>
-            
-                
             </select>
+            <br>
+            Fecha en la que fue capturado:
+            <br>
+            <br>
+            <input type="date" name="date" id="date" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
             <br>
             <br>
             <input type="submit" class="btn btn-success btn-block" name="save-poke" value="Añadir pokemon">
@@ -41,8 +44,10 @@
         <thead>
             <tr>
                 <th>ID</th>
+
                 <th>Nombre</th>
 
+                <th>Fecha</th>
 
                 <th>Acciones</th>
             </tr>
@@ -57,6 +62,7 @@
                 
                     <td><?php echo $row['id'] ?></td>
                     <td><?php echo $row['name'] ?></td>
+                    <td><?php echo $row['date'] ?></td>
 
 
                     <td>
@@ -75,5 +81,7 @@
     </table>
 </div>
 
+
+<a href=./index2.php>ENLACE A INVENTARIO</a>
 
 <?php include("includes/footer.php")?>

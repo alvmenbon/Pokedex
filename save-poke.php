@@ -4,12 +4,14 @@ include("db.php");
 
 if (isset($_POST['save-poke'])){
     $name = $_POST['name'];
-   // $date = $_POST['date'];
+   $date = $_POST['date'];
    
+
+
   
 
     
-    $result = $db->query("INSERT INTO pokemon(name) VALUES('$name')");
+    $result = $db->query("INSERT INTO pokemon(name, date) VALUES('$name', '$date')");
     
     
     if (!$result) {

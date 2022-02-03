@@ -7,7 +7,8 @@ if(isset($_GET['id'])){
     if($result->numColumns() == 1) {
        /* echo 'you can edit'; */
        $row = $result->fetchArray();
-       $name = $row['name'];  //COGE DATOS TABLA
+       $name = $row['name'];
+       $date =$row['date'];  //COGE DATOS TABLA
  
        
     }
@@ -17,13 +18,13 @@ if (isset($_POST['update'])){
    /* echo 'updating';*/
    $id = $_GET['id'];
    $name = $_POST['name'];
-  
+   $date = $_POST['date'];
   /* echo $brand;
    echo $model;
    echo $year;
    echo $matricula;
    echo $precio;*/
-   $db->query("UPDATE pokemon set name = '$name' WHERE id = $id");
+   $db->query("UPDATE pokemon set name = '$name', date = '$date' WHERE id = $id");
    
 
     $_SESSION['message']= 'Datos editados correctamente';
@@ -48,6 +49,13 @@ if (isset($_POST['update'])){
             
                 
             </select>
+            <br>
+            Fecha en la que fue capturado:
+            <br>
+            <br>
+            <input type="date" name="date" id="date" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+            <br>
+            <br>
             <br>
                    <button class="btn btn-succes" name="update">Editar</button>
                </form>
